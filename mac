@@ -40,7 +40,12 @@ brew_install_or_upgrade() {
     fi
   else
     fancy_echo "Installing %s ..." "$1"
-    brew install "$@"
+
+    if "$@" == "git"
+      brew install git --without-completions
+    else
+      brew install "$@"
+    fi
   fi
 }
 

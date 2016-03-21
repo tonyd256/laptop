@@ -41,7 +41,7 @@ brew_install_or_upgrade() {
   else
     fancy_echo "Installing %s ..." "$1"
 
-    if "$@" == "git"
+    if [ "$@" == "git" ]; then
       brew install git --without-completions
     else
       brew install "$@"
@@ -146,13 +146,12 @@ brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'node'
 brew_install_or_upgrade 'heroku-toolbelt'
 brew_install_or_upgrade 'hub'
-brew_install_or_upgrade 'bfg'
 brew_install_or_upgrade 'tree'
 brew_install_or_upgrade 'watchman'
-brew_install_or_upgrade 'liftoff'
 brew_install_or_upgrade 'carthage'
-brew_install_or_upgrade 'boot2docker'
+brew_install_or_upgrade 'docker-machine'
 brew_install_or_upgrade 'docker'
+brew_install_or_upgrade 'docker-compose'
 
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
@@ -203,6 +202,9 @@ brew cask install spotify
 brew cask install vlc
 brew cask install transmission
 brew cask install virtualbox
+brew cask install java
+
+brew_install_or_upgrade 'bfg'
 
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"

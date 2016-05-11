@@ -155,6 +155,7 @@ brew_install_or_upgrade 'docker-compose'
 
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
+brew_install_or_upgrade 'gpg2'
 brew_install_or_upgrade 'libyaml'
 
 brew_install_or_upgrade 'rbenv'

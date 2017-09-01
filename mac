@@ -148,10 +148,12 @@ brew_install_or_upgrade 'heroku-toolbelt'
 brew_install_or_upgrade 'hub'
 brew_install_or_upgrade 'tree'
 brew_install_or_upgrade 'watchman'
-brew_install_or_upgrade 'carthage'
 brew_install_or_upgrade 'docker-machine'
 brew_install_or_upgrade 'docker'
 brew_install_or_upgrade 'docker-compose'
+brew_install_or_upgrade 'haskell-stack'
+brew_install_or_upgrade 'fzf'
+brew_install_or_upgrade 'convox'
 
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
@@ -189,7 +191,6 @@ if ! command -v rcup >/dev/null; then
 fi
 
 brew_tap 'caskroom/cask'
-brew_install_or_upgrade 'brew-cask'
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -197,7 +198,6 @@ brew cask install dropbox
 brew cask install google-chrome
 brew cask install 1password
 brew cask install charles
-brew cask install ios-console
 brew cask install screenhero
 brew cask install spotify
 brew cask install vlc
@@ -205,7 +205,8 @@ brew cask install transmission
 brew cask install virtualbox
 brew cask install java
 
-brew_install_or_upgrade 'bfg'
+sudo easy_install pip
+pip install awscli
 
 if [ -f "$HOME/.laptop.local" ]; then
   . "$HOME/.laptop.local"

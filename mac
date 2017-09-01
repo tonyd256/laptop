@@ -152,6 +152,7 @@ brew_install_or_upgrade 'docker-machine'
 brew_install_or_upgrade 'docker'
 brew_install_or_upgrade 'docker-compose'
 brew_install_or_upgrade 'haskell-stack'
+brew_install_or_upgrade 'ag'
 brew_install_or_upgrade 'fzf'
 brew_install_or_upgrade 'convox'
 
